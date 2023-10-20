@@ -49,7 +49,6 @@ function Moviecard({ movie }) {
       axios.post(`${URL}/modify-rating?id=${movie?.id}`, requestData)
         .then((response) => {
             console.log('Rating modified successfully:', response.data);
-            console.lof(response.data)
         })
         .catch((error) => {
             console.error('Error modifying rating:', error);
