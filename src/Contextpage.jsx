@@ -25,8 +25,8 @@ export function MovieProvider({ children }) {
   const [user, setUser] = useAuthState(auth)//=======> firebase custom hooks state
   const navigate = useNavigate();// =====> navigate page
 
-  const APIKEY = import.meta.env.VITE_API_KEY;
-  const URL = import.meta.env.VITE_API_URL;
+  const APIKEY = 'fe566ec66fc817f41b843db221b0555a';
+  const URL = 'https://movie-be-d2tj.onrender.com';
 
   console.log('URL', URL)
 

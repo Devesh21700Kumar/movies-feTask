@@ -12,7 +12,7 @@ const Player = () => {
     const [moviedet, setMoviedet] = useState([]);
     const { id } = useParams()
 
-    const APIKEY = import.meta.env.VITE_API_KEY;
+    const APIKEY = 'fe566ec66fc817f41b843db221b0555a';
     const fetchMovie = async () => {
         const data = await fetch(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKEY}&language=en-US`

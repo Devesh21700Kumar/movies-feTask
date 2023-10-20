@@ -12,7 +12,7 @@ import MovieRating from './MovieRating';
 
 function Moviecard({ movie }) {
     const { user } = useContext(Contextpage);
-    const URL = import.meta.env.VITE_API_URL;
+    const URL = 'https://movie-be-d2tj.onrender.com';
 
     const [isBookmarked, setIsBookmarked] = useState(null);
 

@@ -9,7 +9,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import slugify from 'react-slugify';
 
 export const Detail = () => {
-  const APIKEY = import.meta.env.VITE_API_KEY;
+  const APIKEY = 'fe566ec66fc817f41b843db221b0555a';
 
   const { loader, setLoader } = useContext(Contextpage);
 
