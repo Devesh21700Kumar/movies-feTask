@@ -26,6 +26,7 @@ export function MovieProvider({ children }) {
   const navigate = useNavigate();// =====> navigate page
 
   const APIKEY = import.meta.env.VITE_API_KEY;
+  const URL = import.meta.env.URL;
 
 
   useEffect(() => {
@@ -36,8 +37,9 @@ export function MovieProvider({ children }) {
 
 
  const filteredGenre = async () => {
+
     const data = await fetch(
-      `http://localhost:8000/searchByGenre?page=${page}&searchByGenre=${activegenre}`
+      `http://${URL || 'localhost:8000'}/searchByGenre?page=${page}&searchByGenre=${activegenre}`
     );
     const filteredGenre = await data.json();
     setMovies(movies.concat(filteredGenre.results)); // Concat new movies with previous movies, on genre change movies are reset to [] so that only movies of new genre will appear, check out useEffect on top for more information.
@@ -49,7 +51,7 @@ export function MovieProvider({ children }) {
 
   const fetchSearch = async (query) => {
     const data = await fetch(
-      `http://localhost:8000/search?keyword=${query}`
+      `http://${URL || 'localhost:8000'}/search?keyword=${query}`
       //`https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&with_origin_country=IN&language=en-US&query=${query}&page=1&include_adult=false`
     );
     const searchmovies = await data.json();
@@ -70,7 +72,7 @@ export function MovieProvider({ children }) {
 
   const fetchTrending = async () => {
     const data = await fetch(
-      `http://localhost:8000/movies?page=${page}`
+      `http://${URL || 'localhost:8000'}/movies?page=${page}`
     );
     const trend = await data.json();
     setTrending(trending.concat(trend.results));
@@ -81,7 +83,7 @@ export function MovieProvider({ children }) {
 
   const fetchUpcoming = async () => {
     const data = await fetch(
-      `http://localhost:8000/movies?page=${page}`
+      `http://${URL || 'localhost:8000'}/movies?page=${page}`
     );
     const upc = await data.json();
     setUpcoming(upcoming.concat(upc.results));

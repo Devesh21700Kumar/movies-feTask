@@ -12,6 +12,7 @@ import MovieRating from './MovieRating';
 
 function Moviecard({ movie }) {
     const { user } = useContext(Contextpage);
+    const URL = import.meta.env.URL;
 
     const [isBookmarked, setIsBookmarked] = useState(null);
 
@@ -45,7 +46,7 @@ function Moviecard({ movie }) {
       const requestData = {
         newRating: newRating, // Replace with the desired new rating
       };
-      axios.post(`http://localhost:8000/modify-rating?id=${movie.id}`, requestData)
+      axios.post(`http://${URL || 'localhost:8000'}/modify-rating?id=${movie.id}`, requestData)
         .then((response) => {
             console.log('Rating modified successfully:', response.data);
             console.lof(response.data)
