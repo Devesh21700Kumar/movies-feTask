@@ -48,7 +48,7 @@ function Trending() {
                                     >
 
                                         {trending.map((tred) => (
-                                            <Moviecard key={tred.id} movie={tred} />
+                                            <Moviecard key={tred?.id} movie={tred} />
                                         ))}
 
                                     </InfiniteScroll>

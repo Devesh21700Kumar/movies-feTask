@@ -32,7 +32,7 @@ function Search() {
                             loader ? <span className="loader m-10"></span> :
                                 <>
                                         {searchedMovies.map((movie) => (
-                                            <Moviecard key={movie.id} movie={movie} />
+                                            <Moviecard key={movie?.id} movie={movie} />
                                         ))}
                                 </>
                         }

@@ -48,7 +48,7 @@ function Upcoming() {
                   >
 
                     {upcoming.map((upc) => (
-                      <Moviecard key={upc.id} movie={upc} />
+                      <Moviecard key={upc?.id} movie={upc} />
                     ))}
 
                   </InfiniteScroll>
